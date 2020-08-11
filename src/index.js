@@ -11,6 +11,10 @@ app.use(cors());
 
 sgMail.setApiKey(process.env.API_KEY);
 
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to the API</h1>");
+});
+
 app.post("/", async (req, res) => {
   const body = req.body;
   const msg = {
